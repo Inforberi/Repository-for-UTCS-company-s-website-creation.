@@ -5,7 +5,7 @@ const servicesCard = document.querySelector('.our-services__card');
 
 let currentIndexServices = 0;
 
-// сколько карточек всего
+// how many cards in total
 
 const allServicesCard = document.querySelectorAll('.our-services__card').length;
 
