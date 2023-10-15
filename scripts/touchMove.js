@@ -1,4 +1,4 @@
-// слайдер косанием пальца
+// finger-touch slider
 const touchMove = function (cardsNameContainer, functionRight, functionLeft) {
     let touchStartX = 0;
     let touchEndX = 0;
@@ -6,12 +6,12 @@ const touchMove = function (cardsNameContainer, functionRight, functionLeft) {
 
     cardsNameContainer.addEventListener('touchstart', (event) => {
         touchStartX = event.touches[0].clientX;
-        isTouchMoving = false; // Сбрасываем состояние при начале касания
+        isTouchMoving = false; // Reset the state when touching starts
     });
 
     cardsNameContainer.addEventListener('touchmove', (event) => {
         touchEndX = event.touches[0].clientX;
-        isTouchMoving = true; // Устанавливаем состояние "движение"
+        isTouchMoving = true; // Set the state "motion"
     });
 
     cardsNameContainer.addEventListener('touchend', () => {
@@ -26,7 +26,7 @@ const touchMove = function (cardsNameContainer, functionRight, functionLeft) {
             }
         }
 
-        // Сбросим значения и состояние
+        // Reset values and state
         touchStartX = 0;
         touchEndX = 0;
         isTouchMoving = false;
