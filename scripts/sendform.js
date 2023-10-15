@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
     submitButton.addEventListener('click', async function () {
         if (await validateForm()) {
             try {
-                submitButton.classList.add('loading'); // Добавить класс loading для анимации
+                submitButton.classList.add('loading'); // Add a loading class for animation
                 submitButton.textContent = 'Loading...';
 
                 const formData = new FormData(form);
@@ -26,39 +26,39 @@ document.addEventListener('DOMContentLoaded', function () {
                     body: formData,
                 });
 
-                // Устанавливаем максимальное время ожидания в 30 секунд
+                // Set the maximum waiting time to 30 seconds
                 const timeoutPromise = new Promise((resolve, reject) => {
                     setTimeout(() => {
                         reject(new Error('Timeout exceeded'));
-                    }, 30000); // 30 секунд
+                    }, 30000); // 30 seconds
                 });
 
-                // Ждем завершения запроса или истечения времени ожидания
+                // Waiting for the request to complete or for the waiting time to expire
                 const response = await Promise.race([
                     responsePromise,
                     timeoutPromise,
                 ]);
 
                 if (response.ok) {
-                    submitButton.classList.remove('loading'); // Удалить класс loading
-                    submitButton.classList.add('sent'); // Добавить класс sent для анимации
+                    submitButton.classList.remove('loading'); 
+                    submitButton.classList.add('sent'); 
                     submitButton.textContent = 'Sent';
                     form.reset();
                     restFontSize();
 
                     setTimeout(() => {
-                        submitButton.classList.remove('sent'); // Удалить класс sent
+                        submitButton.classList.remove('sent'); 
                         submitButton.textContent = 'Send';
-                    }, 1500); // Задержка в полсекунды
+                    }, 1500); 
                 } else {
-                    // Обработка ошибки отправки данных
+                    
                     console.error('Ошибка при отправке данных на сервер');
                     showErrorAndReset();
                 }
             } catch (error) {
                 setTimeout(() => {
                     submitButton.textContent = 'Send';
-                }, 2000); // Задержка
+                }, 2000); 
 
                 submitButton.textContent = 'Error';
                 console.error('Произошла ошибка при отправке данных:', error);
@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const showErrorAndReset = () => {
         if (submitButton.textContent !== 'Sent') {
-            // Проверяем, что кнопка не имеет текст "Sent"
+            // Check that the button does not have the text "Sent"
             submitButton.textContent = 'Error';
 
             setTimeout(() => {
