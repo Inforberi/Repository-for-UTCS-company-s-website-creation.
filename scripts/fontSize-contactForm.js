@@ -6,13 +6,13 @@ const fontSizeTextArea = document.querySelector(
     '.contact-form__form_text-area'
 );
 
-// Находим размер шрифта
+// Find the font size
 const fontSize = window.getComputedStyle(phoneInput);
 const fontSizeInp = fontSize.getPropertyValue('font-size');
 const fontSizeEndInput = parseFloat(fontSizeInp) + 3;
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Функция для изменения размера шрифта
+    // Function for changing the font size
     const changeSize = (font, fontSize) => {
         if (font.value.length === 0) {
             font.style.fontSize = '';
@@ -25,18 +25,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const fontSizeFn = () => {
         fontSizeInput.forEach((font) => {
-            // Изменение размера текста при вводе
+            // Resizing text as you type
             font.addEventListener('input', () => {
                 changeSize(font, fontSizeEndInput);
             });
 
-            // Добавляем обработчик change для авто-заполнения
+            // Add change handler for auto-complete
             font.addEventListener('change', () => {
                 changeSize(font, fontSizeEndInput);
             });
         });
 
-        // Добавляем обработчик для телефонного номера (только числа и +)
+        // Add a handler for a phone number (only numbers and +)
         phoneInput.addEventListener('input', function (event) {
             const inputValue = event.target.value.replace(/[^\d+]/g, '');
             event.target.value = inputValue;
@@ -48,12 +48,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         fontSizeTextArea.addEventListener('input', () => {
-            // Изменение размера текста при загрузке страницы
+            // Resizing text on page load
             changeSize(fontSizeTextArea, fontSizeEndInput);
         });
 
         fontSizeTextArea.addEventListener('change', () => {
-            // Изменение размера текста при загрузке страницы
+            // Resizing text on page load
             changeSize(fontSizeTextArea, fontSizeEndInput);
         });
     };
