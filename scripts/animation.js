@@ -1,27 +1,27 @@
-// Функция, которая будет вызываться при изменении видимости элемента
+// Function that will be called when the element visibility is changed
 function handleIntersection(entries, observer) {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
             entry.target.classList.add('active-1');
-            // Опционально: можно отключить наблюдение после активации
+            // Optional: you can deactivate monitoring after activation
             observer.unobserve(entry.target);
         }
     });
 }
 
-// Создание экземпляра Intersection Observer
+// Creating an Intersection Observer instance
 const options = {
-    threshold: 0.5, // Когда видимость элемента составляет 50% и более
+    threshold: 0.5, // When the visibility of an item is 50% or more
 };
 const observer = new IntersectionObserver(handleIntersection, options);
 
-// Начните наблюдение за элементами с классом 'why-utcs__list-item'
+// Start observing items with the class 'why-utcs__list-item'
 const animations = document.querySelectorAll('.why-utcs__list-item');
 animations.forEach((item) => {
     observer.observe(item);
 });
 
-// Вызов начальной анимации для первого элемента (если он видим в момент загрузки страницы)
+// Call the initial animation for the first element (if it is visible at the moment of page loading)
 if (
     animations.length > 0 &&
     animations[0].getBoundingClientRect().top < window.innerHeight * 0.5
