@@ -1,0 +1,25 @@
+@mixin laptop() {
+    @media (max-width: $breakpoint-laptop) {
+        @content;
+    }
+}
+
+@mixin tablet() {
+    @media (max-width: $breakpoint-tablet) {
+        @content;
+    }
+}
+
+@mixin mobile() {
+    @media (max-width: $breakpoint-mobile) {
+        @content;
+    }
+}
+
+@function vwm($pixels) {
+    @return ($pixels / $breakpoint-mobile) * 100vw;
+}
+
+@function vwt($pixels) {
+    @return ($pixels / $breakpoint-tablet) * 100vw;
+}

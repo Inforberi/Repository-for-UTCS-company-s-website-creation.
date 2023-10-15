@@ -1,0 +1,29 @@
+// colors
+$color-main: #111523;
+$color-second: #f84804;
+$color-third: #ff4e02;
+
+// fonts
+$font-main: 'Inter', sans-serif;
+$font-first: 'Manrope', sans-serif;
+$font-second: 'Montserrat', sans-serif;
+$font-third: 'Open Sans', sans-serif;
+
+//vars for adaptive
+$breakpoint-mobile: 435px;
+$breakpoint-tablet: 980px;
+$breakpoint-laptop: 1190px;
+
+///tablet text-block shadow
+
+$text-shadow: 0px vwt(3.53273px) vwt(3.53273px) 0px rgba(0, 0, 0, 0.25);
+$box-shadow: 0px vwt(4px) vwt(4px) 0px rgba(0, 0, 0, 0.25);
+
+/// mobile text-block shadow
+
+$text-mobile-shadow: 0px vwm(3.173184394836426px) vwm(3.173184394836426px)
+    rgba(0, 0, 0, 0.25);
+
+$box-shadow-mobile: 0px vwm(3.53273px) vwm(3.53273px) 0px rgba(0, 0, 0, 0.25);
+
+

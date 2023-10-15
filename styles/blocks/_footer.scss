@@ -1,0 +1,258 @@
+.footer {
+    background-color: $color-main;
+    height: 320px;
+
+    padding-top: 27px;
+
+    // .footer__main-container
+
+    &__main-container {
+        display: flex;
+        gap: 75px;
+
+        justify-content: center;
+    }
+
+    // .footer__logo
+
+    &__logo {
+        width: 168px;
+        height: 84px;
+    }
+
+    // .footer__nav-list
+
+    &__nav-list {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    // .footer__address-text
+
+    &__address-text {
+        max-width: 213px;
+    }
+
+    // .footer__phone
+
+    &__phone {
+        display: block;
+        margin-bottom: 35px;
+    }
+
+    // .footer__socials
+
+    &__socials {
+        display: flex;
+        gap: 25px;
+    }
+}
+
+.all-text {
+    text-align: left;
+    font-size: 1.2rem;
+    font-weight: 400;
+
+    line-height: 150%;
+    letter-spacing: -0.04125rem;
+}
+
+.all-socials {
+    width: 60px;
+    height: 60px;
+
+    transition: transform 0.5s ease;
+
+    &:hover {
+        transform: scale(1.2);
+        transition: transform 0.5s ease;
+    }
+}
+
+.footer__title {
+    text-align: left;
+    font-size: 1.375rem;
+    font-weight: 600;
+    line-height: 130%;
+    letter-spacing: -0.04125rem;
+
+    margin-top: 37px;
+    margin-bottom: 35px;
+}
+
+////////////////// laptop
+
+@include laptop {
+    .footer {
+        // .footer__main-container
+
+        &__main-container {
+            gap: 36px;
+        }
+
+        // .footer__logo
+
+        &__logo {
+            margin-right: 100px;
+        }
+
+        // .footer__nav
+
+        &__nav {
+            display: none;
+        }
+
+        // .footer__address-text
+
+        &__address-text {
+            max-width: 208px;
+        }
+
+        // .footer__phone
+
+        &__phone {
+            margin-bottom: 25px;
+        }
+    }
+
+    .all-text {
+        font-size: 1.25rem;
+    }
+
+    .all-socials {
+        width: 50px;
+        height: 50px;
+    }
+
+    .footer__title {
+        margin-top: 40px;
+    }
+}
+
+///////////// tablet
+
+@include tablet {
+    .footer {
+        height: vwt(296px);
+
+        padding-top: vwt(25px);
+
+        // .footer__main-container
+
+        &__main-container {
+            gap: vwt(45px);
+        }
+
+        // .footer__logo
+
+        &__logo {
+            width: vwt(155px);
+            height: vwt(86.8px);
+
+            margin-right: 0px;
+        }
+
+        // .footer__address-text
+
+        &__address-text {
+            max-width: vwt(208px);
+        }
+
+        // .footer__phone
+
+        &__phone {
+            margin-bottom: vwt(40px);
+        }
+
+        // .footer__socials
+
+        &__socials {
+            gap: vwt(20px);
+        }
+    }
+
+    .all-text {
+        font-size: vwt(18px);
+        letter-spacing: 0;
+    }
+
+    .all-socials {
+        width: vwt(50px);
+        height: vwt(50px);
+
+        transition: initial;
+
+        &:hover {
+            transform: initial;
+            transition: initial;
+        }
+    }
+
+    .footer__title {
+        font-size: vwt(18px);
+
+        letter-spacing: 0;
+
+        margin-top: vwt(40px);
+        margin-bottom: vwt(40px);
+    }
+}
+
+///////////// mobile
+
+@include mobile {
+    .footer {
+        height: vwm(171px);
+
+        padding-top: vwm(18px);
+
+        // .footer__main-container
+
+        &__main-container {
+            gap: vwm(16px);
+        }
+
+        // .footer__logo
+
+        &__logo {
+            width: vwm(62px);
+            height: vwm(30px);
+        }
+
+        // .footer__address-text
+
+        &__address-text {
+            max-width: vwm(72px);
+        }
+
+        // .footer__phone
+
+        &__phone {
+            margin-bottom: vwm(25px);
+        }
+
+        // .footer__socials
+
+        &__socials {
+            gap: vwm(15px);
+        }
+    }
+
+    .all-text {
+        font-size: vwm(12px);
+        margin-bottom: vwm(15px);
+    }
+
+    .all-socials {
+        width: vwm(30px);
+        height: vwm(30px);
+    }
+
+    .footer__title {
+        font-size: vwm(12px);
+
+        margin-top: vwm(7px);
+        margin-bottom: vwm(25px);
+    }
+}

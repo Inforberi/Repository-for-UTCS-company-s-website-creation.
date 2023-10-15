@@ -1,0 +1,139 @@
+// html {
+//     overflow-x: hidden;
+// }
+
+body {
+    font-family: $font-main;
+
+    margin: 0 auto;
+
+    color: white;
+
+    overflow-x: hidden !important;
+}
+
+///// container
+
+.container {
+    max-width: 1190px;
+    padding: 0 15px;
+
+    margin: 0 auto;
+}
+
+@include laptop {
+    .container {
+        max-width: 1010px;
+    }
+}
+
+@include tablet {
+    .container {
+        max-width: $breakpoint-tablet;
+        padding: 0 vwt(80px);
+    }
+}
+
+@include mobile {
+    .container {
+        max-width: $breakpoint-mobile;
+        padding: 0 vwm(30px);
+    }
+}
+
+///// button
+
+.button {
+    box-sizing: border-box;
+
+    font-size: 1.375rem;
+    font-weight: 600;
+    letter-spacing: -0.66px;
+    color: $color-third;
+    font-family: $font-first;
+
+    border-radius: 16.712px;
+    border: 2px solid $color-third;
+
+    transition: background-color 0.5s ease;
+
+    &:hover {
+        background-color: $color-third;
+        color: white;
+
+        transition: background-color 0.5s ease;
+    }
+}
+
+@include tablet {
+    .button {
+        transition: none;
+
+        font-size: vwt(16px);
+        letter-spacing: vwt(-0.48px);
+
+        border: vwt(2px) solid $color-third;
+        border-radius: vwt(15px);
+
+        &:hover {
+            background-color: transparent;
+            color: $color-third;
+
+            transition: none;
+        }
+    }
+}
+
+@include mobile {
+    .button {
+        font-size: vwm(14px);
+        letter-spacing: vwm(-0.42px);
+        font-weight: 500;
+
+        border: vwm(1px) solid $color-third;
+        border-radius: vwm(15px);
+    }
+}
+
+/////// title
+
+.title {
+    color: #292d39;
+    font-family: $font-first;
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: -1.92px;
+    line-height: 120%;
+
+    text-align: center;
+
+    margin-bottom: 65px;
+
+    &__other-color {
+        color: $color-third;
+    }
+}
+
+@include laptop {
+    .title {
+        margin-bottom: 55px;
+    }
+}
+
+@include tablet {
+    .title {
+        font-size: vwt(40px);
+        letter-spacing: vwt(-1.6px);
+
+        margin-bottom: vwt(40px);
+    }
+}
+
+@include mobile {
+    .title {
+        font-size: vwm(25px);
+        letter-spacing: vwm(-1px);
+
+        margin-bottom: vwm(35px);
+    }
+}

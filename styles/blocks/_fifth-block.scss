@@ -1,0 +1,242 @@
+.safer-roads {
+    padding-bottom: 120px;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    max-width: 1440px;
+    margin: 0 auto;
+
+    // .safer-roads__main-container
+
+    &__main-container {
+        position: relative;
+        height: 704px;
+        background: #111523;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+        padding: 92px 0;
+
+        border-radius: 10px;
+    }
+
+    // .safer-roads__container
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    // .safer-roads__text
+
+    &__text {
+        position: relative;
+        z-index: 3;
+        text-align: center;
+        font-size: 1.25rem;
+        line-height: 150%;
+
+        width: 464px;
+
+        margin-right: 43px;
+
+        margin-bottom: 50px;
+    }
+
+    // safer-roads__PS-text
+
+    &__PS-text {
+        font-style: italic;
+    }
+
+    // .safer-roads__title
+
+    &__title {
+        position: absolute;
+        // top: -51px;
+        // right: -92px;
+        top: 41px;
+        right: 43px;
+
+        font-family: $font-first;
+        text-align: right;
+        font-size: 1.5rem;
+        font-weight: 500;
+        line-height: 110%;
+        letter-spacing: -0.045rem;
+
+        width: 408px;
+    }
+
+    // .safer-roads__image
+
+    &__image {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 52.65vw;
+
+        max-width: 787px;
+    }
+}
+
+///////////////////// laptop
+
+@include laptop {
+    .safer-roads {
+        padding-bottom: 110px;
+
+        max-width: 1190px;
+
+        // .safer-roads__main-container
+        &__main-container {
+            padding: 65px 0;
+
+            height: 54.62vw;
+        }
+
+        // .safer-roads__text
+
+        &__text {
+            font-size: 1.6vw;
+
+            width: 39vw;
+
+            margin-right: 5px;
+
+            margin-bottom: 55px;
+        }
+        // .safer-roads__title
+
+        &__title {
+            top: 55px;
+            right: 55px;
+        }
+
+        // .safer-roads__image
+
+        &__image {
+            width: 50vw;
+
+            max-width: 611px;
+            min-width: 500px;
+        }
+    }
+}
+
+//////////////// tablet
+
+@include tablet {
+    .safer-roads {
+        padding-bottom: vwt(80px);
+        padding-left: vwt(0px);
+        padding-right: vwt(0px);
+
+        max-width: vwt(980px);
+
+        // .safer-roads__main-container
+
+        &__main-container {
+            height: vwt(566px);
+
+            box-shadow: $box-shadow;
+
+            padding: vwt(71px) 0;
+
+            border-radius: vwt(10px);
+        }
+
+        // .safer-roads__text
+
+        &__text {
+            font-size: vwt(16px);
+
+            width: vwt(352px);
+
+            margin-right: vwt(17px);
+
+            margin-bottom: vwt(40px);
+        }
+
+        // .safer-roads__title
+
+        &__title {
+            position: absolute;
+
+            top: vwt(40px);
+            right: vwt(40px);
+
+            font-size: vwt(22px);
+
+            letter-spacing: vwt(-0.66px);
+
+            width: vwt(332px);
+        }
+
+        // .safer-roads__image
+
+        &__image {
+            width: vwt(523px);
+            height: vwt(390px);
+            min-width: vwt(523px);
+        }
+    }
+}
+
+//////////////// mobile
+
+@include mobile {
+    .safer-roads {
+        padding-bottom: vwm(70px);
+
+        max-width: vwm(435px);
+
+        // .safer-roads__main-container
+
+        &__main-container {
+            height: vwm(602px);
+
+            box-shadow: $box-shadow-mobile;
+
+            padding: vwm(35px) 0;
+
+            border-radius: vwm(5px);
+        }
+
+        // .safer-roads__text
+
+        &__text {
+            font-size: vwm(14px);
+            line-height: 130%;
+
+            width: vwm(335px);
+
+            margin-right: 0;
+
+            margin: 0 auto;
+            margin-bottom: vwm(25px);
+        }
+
+        // .safer-roads__title
+
+        &__title {
+            top: auto;
+            right: auto;
+            bottom: vwm(20px);
+            left: vwm(20px);
+
+            font-size: vwm(12px);
+
+            letter-spacing: vwm(-0.36px);
+
+            width: vwm(128px);
+        }
+
+        // .safer-roads__image
+
+        &__image {
+            width: vwm(337px);
+            height: vwm(251px);
+            min-width: vwm(337px);
+        }
+    }
+}
